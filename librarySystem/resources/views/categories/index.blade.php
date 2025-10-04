@@ -10,6 +10,7 @@
     @foreach ($categories as $category)
     <li>{{$category -> name}}</li>
     @endforeach
+    <a href="{{ route('categories.create') }}">Create category</a>
 </ul>   
 </body>
 </html>
