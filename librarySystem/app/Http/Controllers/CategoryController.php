@@ -47,7 +47,7 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-	    $book = Category::findOrFail($id);
+	    $category = Category::findOrFail($id);
         return view('categories.edit', compact('category'));
 
     }
@@ -55,10 +55,14 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+  public function update(Request $request, string $id)
     {
-        //
+        $category = category::findOrFail($id);
+        $category->update($request->all());
+        return redirect()->route('categories.index');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
