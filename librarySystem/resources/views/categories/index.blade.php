@@ -6,11 +6,15 @@
     <title>Document</title>
 </head>
 <body>
- <ul>
+    <ul>
     @foreach ($categories as $category)
-    <li>{{$category -> name}}</li>
+        <li>
+            {{ $category->name }} | 
+            <a href="{{ route('categories.edit', $category->id) }}">Editar</a>
+        </li>
     @endforeach
-    <a href="{{ route('categories.create') }}">Create category</a>
-</ul>   
+    </ul>
+<a href="{{ route('categories.create') }}">Create category</a>
+
 </body>
 </html>
