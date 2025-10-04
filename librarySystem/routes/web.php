@@ -10,3 +10,6 @@ Route::get('/', function () {
 Route::get('/categories/create',[CategoryController::class, 'create'])->name('categories.create');
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route:: post('/categories',[CategoryController::class, 'store'])->name('categories.store');
+Route::get('/books/{book}/edit', [CategoryController::class, 'edit'])->name('books.edit');
+Route::put('/books/{book}', [CategoryController::class, 'update'])->name('books.update');
+
